@@ -1,0 +1,12 @@
+<h1>FAQ</h1>
+
+<p>
+	<ul>
+		<% @faqs.each do |faq| %>
+			<li><%= link_to faq.question, faq_path(faq.id) %></li>
+		<% end %>
+	</ul>
+</p>
+
+<%= link_to 'Add new question', new_faq_path %><br />
+<%= link_to 'View FAQ topics by tag', tags_path %>

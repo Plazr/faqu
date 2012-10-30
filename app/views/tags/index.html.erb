@@ -1,0 +1,10 @@
+<h1>FAQ Topics by Tag</h1>
+<p>
+	<ul>
+		<% @tags.each do |tag| %>
+			<li><%= link_to tag.name, tag_path(tag) %></li>
+		<% end %>
+	</ul>
+</p>
+
+<%= link_to '<< Back to the FAQ index', faqs_path %>

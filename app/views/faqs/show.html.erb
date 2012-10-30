@@ -1,0 +1,19 @@
+<h1>FAQ number <%= @faq.id %></h1>
+<p>
+	<strong>Question</strong><br />
+	<%= @faq.question %>
+</p>
+<p>
+	<strong>Answer</strong><br />
+	<%= @faq.answer %>
+</p>
+<p>
+	<strong>Tags</strong><br />
+	<%= @faq.tag_list %>
+</p>
+<p>
+	<%= link_to 'Edit', edit_faq_path %>
+	<%= link_to 'Delete', faq_path(@faq), method: :delete, confirm: 'Are you sure you want to delete de FAQ topic?' %>
+</p>
+
+<%= link_to '<< Back to the FAQ index', faqs_path %>

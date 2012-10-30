@@ -1,0 +1,17 @@
+<h1>Tag <%= @tag.name %></h1>
+<strong>List of FAQ topics for this tag</strong>
+<p>
+	<ul>
+		<% @tag.faqs.each do |faq| %>
+			<li><%= link_to faq.question, faq_path(faq) %></li>
+		<% end %>
+	</ul>
+</p>
+<% if @tag.taggings.count > 0 %>
+	<p>
+		<%= link_to 'Delete ' << pluralize(@tag.taggings.count, 'topic'), tag_path(@tag), method: :delete, confirm: 'Are you sure you want to delete these FAQ topics?' %>
+	</p>
+<% end %>
+
+<%= link_to '<< Back to the Tag index', tags_path %><br />
+<%= link_to '<< Back to the FAQ index', faqs_path %>
