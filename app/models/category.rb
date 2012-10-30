@@ -1,8 +1,7 @@
 class Category < ActiveRecord::Base
   
   #### Relations ####
-  has_many :category_questions
-  has_many :questions, through: :category_questions
+  has_many :questions
 
 
   #### Accessors ####
