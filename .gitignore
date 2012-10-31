@@ -6,4 +6,5 @@ tmp/
 .sass-cache
 Gemfile.lock
 *.swp
+.DS_Store
 
