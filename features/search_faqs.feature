@@ -11,6 +11,6 @@ Feature: Search Faqs
 		When I select category <Category>
 		Then I should see the questions of category <Category>
 		Examples:
-			| Category |
-			| asd      |
-			| dsa      |
+			| Category 			|
+			| categoria_1      	|
+			| categoria_2       |
