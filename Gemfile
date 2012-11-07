@@ -7,6 +7,8 @@ gem 'rails', '3.2.8'
 
 gem 'sqlite3'
 
+gem 'play_auth', :git => 'git@github.com:naps62/PlayAuth.git'
+
 
 # Gems used only for assets and not required
 # in production environments by default.

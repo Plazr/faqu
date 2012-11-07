@@ -2,6 +2,7 @@ Faqu::Application.routes.draw do
 
   get "home/index"
 
+    mount PlayAuth::Engine => '/'
 	root :to => 'home#index'
 	
 	resources :categories

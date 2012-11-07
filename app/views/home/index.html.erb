@@ -1,0 +1,6 @@
+<h1>Selecione utlizador</h1>
+
+<%= link_to "Guest", set_admin_path(0)  %></br>
+<%= link_to "Administrador", set_admin_path(1) %>
+
+You are: <%= (User.admin == '1') ? 'Admin' : 'Guest' %>
