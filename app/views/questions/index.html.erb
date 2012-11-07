@@ -2,6 +2,18 @@
 
 <table>
   <tr>
+
+
+    <% if !@admin.nil? %>
+      <th>Category</th>
+    <% end %>
+
+    <th>Question</th>
+
+    <% if !@admin.nil? %>
+      <th>Answer</th>
+    <% end %>
+
     <th></th>
     <th></th>
     <th></th>
@@ -9,13 +21,25 @@
 
 <% @questions.each do |question| %>
   <tr>
-    <td><%= link_to 'Show', question %></td>
-    <td><%= link_to 'Edit', edit_question_path(question) %></td>
-    <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    
+    <% if admin? %>
+          <td><%= question.category_id %></td>
+    <% end %>
+
+    <td><%= link_to question.question, question  %></td>
+
+    
+
+    
+    
+
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Question', new_question_path %>
+    <% if admin? %>
+        <%= link_to 'New Question', new_question_path %>
+    <% end %>
+

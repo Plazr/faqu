@@ -4,7 +4,7 @@ Feature: Search Faqs
 		Given I am at the 'FAQ' page
 
 	Scenario: Search all Faqs
-		When I select 'All' categories
+		When I select category 'All'
 		Then I should see all questions
 		
 	Scenario Outline: Search Faqs with filter

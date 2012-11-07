@@ -2,6 +2,7 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
+    @admin = nil
     @questions = Question.all
 
     respond_to do |format|

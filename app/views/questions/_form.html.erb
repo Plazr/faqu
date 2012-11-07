@@ -11,6 +11,18 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= f.label :Categoria %><br />
+    <%= f.select :category_id,Category.all.collect{|p| [p.description,p.id]} %>
+  </div>
+  <div class="field">
+    <%= f.label :question %><br />
+    <%= f.text_field :question %>
+  </div>
+  <div class="field">
+    <%= f.label :answer %><br />
+    <%= f.text_field :answer %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
