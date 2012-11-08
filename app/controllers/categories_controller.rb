@@ -73,6 +73,7 @@ class CategoriesController < ApplicationController
   # DELETE /categories/1.json
   def destroy
     @category = Category.find(params[:id])
+    @category.questions.destroy_all
     @category.destroy
 
     respond_to do |format|

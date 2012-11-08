@@ -4,7 +4,7 @@
   <tr>
 
       <%= form_for('search') do |t| %>
-        <%= t.select :category_id,Category.all.collect{|p| [p.description,p.id]} %>
+        <%= t.select :category_id, Category.all.collect{|p| [p.description,p.id]} %>
         <%= t.submit :filter %>  
       <% end %>
 
