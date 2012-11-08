@@ -27,7 +27,7 @@
   <tr>
     
     <% if admin? %>
-          <td><%= question.category_id %></td>
+          <td><%= question.category.description %></td>
     <% end %>
 
     <td><%= link_to question.question, question  %></td>
@@ -44,6 +44,7 @@
 <br />
 
     <% if admin? %>
-        <%= link_to 'New Question', new_question_path %>
+        <%= link_to 'New Question', new_question_path %><br/>
+        <%= link_to 'Manage Categories', categories_path %>
     <% end %>
 

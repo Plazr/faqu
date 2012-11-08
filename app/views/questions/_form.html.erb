@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :Categoria %><br />
-    <%= f.select :category_id,Category.all.collect{|p| [p.description,p.id]} %>
+    <%= f.label :Category %><br />
+    <%= f.select :category_id, Category.all.collect{|p| [p.description,p.id]} %>
   </div>
   <div class="field">
     <%= f.label :question %><br />

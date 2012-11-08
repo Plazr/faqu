@@ -5,6 +5,6 @@ class Question < ActiveRecord::Base
 
 
   #### Accessors ####
-  attr_accessible :answer, :question,:category_id
+  attr_accessible :answer, :question, :category_id
 
 end
