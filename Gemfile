@@ -6,7 +6,7 @@ gem 'rails', '3.2.8'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-
+gem 'thin'
 gem 'play_auth', :git => 'git@github.com:naps62/PlayAuth.git'
 
 
