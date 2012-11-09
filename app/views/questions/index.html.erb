@@ -3,8 +3,9 @@
 <table>
   <tr>
 
-      <%= form_for('search') do |t| %>
-        <%= t.select :category_id,Category.all.collect{|p| [p.description,p.id]} %>
+      <%= form_for @category do |t| %>
+        <%#= t.select :category_id,Category.all.collect{|p| [p.description,p.id]} %>
+        <%= collection_select :category, :id, @categories, :id, :description %>
         <%= t.submit :filter %>  
       <% end %>
 

@@ -3,6 +3,13 @@ class QuestionsController < ApplicationController
   # GET /questions.json
   def index
     @admin = nil
+    @categories = Category.all
+    if params[:id]
+      @category = Category.find(params[:id])
+    else
+      @category = Category.new
+    end
+    
     @questions = Question.all
 
     respond_to do |format|
