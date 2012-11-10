@@ -1,6 +1,8 @@
-<h1>Selecione utlizador</h1>
-
-<%= link_to "Guest", set_admin_path(0)  %></br>
-<%= link_to "Administrador", set_admin_path(1) %>
-
-You are: <%= (User.admin == '1') ? 'Admin' : 'Guest' %>
+<h1>Welcome to FaqU<%= (current_user) ? " , " + current_user.name : "" %><%= (admin) ? "(Admin)" : "" %></h1>
+<% if (!current_user) %>
+	<%= link_to "Login", "users/sign_in"  %></br>
+	<%= link_to "Register", "users/sign_up" %></br>
+<% else%>
+	<%= link_to "Continue", "questions" %></br></br>
+	<%= link_to "Logout", "users/sign_out" %></br></br>
+<% end %>

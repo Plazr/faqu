@@ -1,23 +1,30 @@
 <h1>Listing questions</h1>
 
+<%= link_to ' Home ', "/" %>
+</br>
+<% if (admin) %>
+        <%= link_to ' New Question ', new_question_path %>
+    <% end %>
+    
+</br>
 <table>
   <tr>
-
+    <% if (!admin) %>
       <%= form_for @category do |t| %>
         <%#= t.select :category_id,Category.all.collect{|p| [p.description,p.id]} %>
         <%= collection_select :category, :id, @categories, :id, :description %>
         <%= t.submit :filter %>  
-      <% end %>
 
-    <% if !@admin.nil? %>
+      <% end
+
+
+     end %>
+   </br></br>
+    <% if admin %>
       <th>Category</th>
     <% end %>
 
     <th>Question</th>
-
-    <% if !@admin.nil? %>
-      <th>Answer</th>
-    <% end %>
 
     <th></th>
     <th></th>
@@ -27,16 +34,12 @@
 <% @questions.each do |question| %>
   <tr>
     
-    <% if admin? %>
+    <% if (admin) %>
           <td><%= question.category_id %></td>
+
     <% end %>
 
     <td><%= link_to question.question, question  %></td>
-
-    
-
-    
-    
 
   </tr>
 <% end %>
@@ -44,7 +47,5 @@
 
 <br />
 
-    <% if admin? %>
-        <%= link_to 'New Question', new_question_path %>
-    <% end %>
+    
 
