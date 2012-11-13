@@ -7,7 +7,7 @@ gem 'rails', '3.2.8'
 
 gem 'thin'
 gem 'play_auth', :git => 'git@github.com:naps62/PlayAuth.git'
-
+gem 'sqlite3'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -22,13 +22,12 @@ group :assets do
 end
 
 group :development, :test do
-  gem 'sqlite3'
   #gem 'debugger'
 end
 
-group :production do
-  gem 'pg'
-end
+#group :production do
+#  gem 'pg'
+#end
 
 group :test do
   gem 'cucumber-rails'
