@@ -17,6 +17,10 @@
         
       <% end
 
+      <%= form_for('search') do |t| %>
+        <%= t.select :category_id, Category.all.collect{|p| [p.description,p.id]} %>
+        <%= t.submit :filter %>  
+      <% end %>
 
      end %>
     </br>
@@ -39,7 +43,6 @@
     
     <% if (admin) %>
           <td><%= question.category_id %></td>
-
     <% end %>
 
     <td><%= link_to question.question, question  %></td>
@@ -50,5 +53,8 @@
 
 <br />
 
-    
+    <% if admin %>
+        <%= link_to 'New Question', new_question_path %><br/>
+        <%= link_to 'Manage Categories', categories_path %>
+    <% end %>
 
