@@ -10,16 +10,19 @@
 <table>
   <tr>
     <% if (!admin) %>
-      <%= form_for @category do |t| %>
-        <%#= t.select :category_id,Category.all.collect{|p| [p.description,p.id]} %>
-        <%= collection_select :category, :id, @categories, :id, :description %>
-        <%= t.submit :filter %>  
-
+      <%= form_tag questions_path, :method => 'get' do %>
+        
+        <%#= collection_select :search, nil, @categories, :id, :description,{:include_blank => "All"}  %>
+        <%= select_tag "search", options_for_select(["All"]+@categories.map{|a| [a.description,a.id]},params[:search]),{:onchange => 'this.form.submit()'}%>
+        
       <% end
 
 
      end %>
-   </br></br>
+    </br>
+    <h2> <%= "Categoria : " + @search_category if @search_category  %></h2>
+
+   
     <% if admin %>
       <th>Category</th>
     <% end %>

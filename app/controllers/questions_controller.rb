@@ -9,9 +9,14 @@ class QuestionsController < ApplicationController
     else
       @category = Category.new
     end
+ 
+    #@questions = Question.all
+    @questions = Question.search(params[:search])
     
-    @questions = Question.all
-
+    if(params[:search] && params[:search]!="All")
+      @search_category = Category.find(params[:search]).description 
+    end
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @questions }
